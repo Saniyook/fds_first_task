@@ -2,19 +2,12 @@
   text-transform: uppercase;
   cursor: pointer;
   font-size: 12px;
+  position: relative;
 
   &_lg {
     width: 100%;
     height: 44px;
     border-radius: 22px;
-    position: relative;
-
-    .fa-arrow-right {
-      font-size: 18px;
-      position: absolute;
-      top: calc(50% - 9px);
-      left: 90%;
-    }
   }
 
   &_filed {
@@ -42,5 +35,15 @@
 
   &_disabled {
     opacity: 0.5;
+  }
+
+  &_arrow {
+
+    .fa-arrow-right {
+      font-size: 18px;
+      position: absolute;
+      top: calc(50% - 9px);
+      left: 90%;
+    }
   }
 }

@@ -17,11 +17,8 @@
 
   &__content {
     display: flex;
-    justify-content: center;
-    align-items: center;
     flex-grow: 1;
-  }
-
-  &__footer-wrapper {
+    align-items: center;
+    justify-content: center;
   }
 }
