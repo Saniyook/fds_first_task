@@ -7,11 +7,17 @@
     outline: none;
     box-sizing: border-box;
     width: 100%;
+    color: $dark_shade_75;
     height: $height_main;
     font-size: 14px;
     border: 1px solid $dark_shade_25;
     padding: 13px 15px;
     border-radius: 4px;
+    transition: border-color $animation-time_default linear;
+
+    &:focus {
+      border-color: $dark_shade_50;
+    }
 
     &::placeholder {
       color: $dark_shade_25;
@@ -63,17 +69,17 @@
 
       + .input_radio-border {
         border-color: $purple_main;
-        transition: border-color 0.2s linear;
+        transition: border-color $animation-time_default linear;
 
         &::after {
           opacity: 1;
-          transition: opacity 0.2s linear;
+          transition: opacity $animation-time_default linear;
         }
       }
 
       ~ .input_radio-span {
         color: $dark_shade_75;
-        transition: color 0.2s linear;
+        transition: color $animation-time_default linear;
       }
     }
   }
@@ -110,7 +116,7 @@
         height: 12px;
         border-radius: 50%;
         background: $dark_shade_25;
-        transition: all 0.2s linear;
+        transition: all $animation-time_default linear;
       }
     }
 
