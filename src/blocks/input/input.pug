@@ -2,7 +2,7 @@ mixin input(params)
   if params == undefinded || params == null
     p Фигня какая-то
   else  
-    - var {type = 'text', placeholder = '', checked = false, name='', id, value=''} = params
+    - var {type = 'text', placeholder, checked = false, name='', id, value=''} = params
     - var cls = `input input_${type}`
     if type == 'text'
       input(type = type, placeholder = placeholder, class=cls)
@@ -19,6 +19,6 @@ mixin input(params)
         .input_radio-border
         span(class = `${cls}-span`) #{value}
     else if type == 'mail'
-      input(type=type, name=name, class = `input_${type}`, placeholder=placeholder)
+      input(type=type, name=name, class = `input_${type}`, placeholder=placeholder || 'Email')
     else if type == 'password'
-      input(type=type, class=cls, placeholder=placeholder, id=id) 
+      input(type=type, class=cls, placeholder=placeholder || 'Password', id=id) 

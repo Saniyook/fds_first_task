@@ -1,0 +1,11 @@
+.form-wrap
+  +form({type: 'auth', label: "Log in"})
+    .input-wrap  
+      +input({type:'mail'})
+    .input-wrap  
+      +input({type:'password'})
+    .btn-wrap_lg
+      +btn({size:'lg', type:'filed', style:'arrow', value: 'Log in'})
+    .accounting-wrap
+      span.accounting Still haven't account?
+      +btn({type: 'border', value: 'Sign up', size:'md'})      
