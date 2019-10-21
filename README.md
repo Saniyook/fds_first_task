@@ -2,7 +2,7 @@
 [![Pug](http://www.picshare.ru/uploads/191018/m8zNVlSH8J.gif)](https://pugjs.org) [![Webpack](http://www.picshare.ru/uploads/191018/5FP60nEM2F.gif)](https://webpack.js.org/) [![Sass](http://www.picshare.ru/uploads/191018/N0ov4WIH30.gif)](https://sass-lang.com/) [![Sass](http://www.picshare.ru/uploads/191018/iGJ33pUBpv.gif)](https://gulpjs.com/) 
 ###### Based on [BEM](bem.info) methodology
 
-## Based on [fds_first_task](https://github.com/Saniyook/fds_first_task)
+## Based on [front-end-starter-pack](https://github.com/Saniyook/front-end-starter-pack)
 
 ## Installation
 ```sh
