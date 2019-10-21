@@ -1,0 +1,11 @@
+include ./__field-label/__field-label.pug
+mixin form(params)
+  if params == undefinded || params == null
+  - var {type, label, id} = params
+  if (type == undefined)
+    p фигня какая то
+  else
+    form(class=`form form_${type}`, id = id)
+      .form__label
+        h1 #{label}
+      block

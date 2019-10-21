@@ -1,0 +1,7 @@
+mixin form__field-label(params)
+  if params == undefinded || params == null
+    p Фигня какаая-то
+  else  
+    - var { value } = params
+    .form__field-label
+        h3 #{value}

@@ -1,0 +1,16 @@
+mixin btn(params)
+  - var {type = 'border', style='', value, size='md', enabled=true} = params
+  - var cls = `btn btn_${type}`
+  if size != undefined
+    - cls += ` btn_${size}`
+  if style == undefined
+    - cls += `  btn_${style}`
+  - enabled = enabled ? 'enabled' : 'disabled' 
+  - cls += `  btn_${enabled}`
+  if size == 'lg'  
+    button(class = cls)
+      div #{value}
+      i(class = 'fas fa-arrow-right')
+  else
+    button(class = cls) 
+      div #{value}      

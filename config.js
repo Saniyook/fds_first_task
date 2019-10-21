@@ -5,8 +5,11 @@ module.exports = {
         blocks: 'src/blocks/'
     },
     alwaysImportStyles: [ // [ [name].scss || [name] ]
+        'normalize',
         'vars.scss',
-        'fonts.scss'
+        'fa',
+        'fonts.scss',
+        'main',
     ],
     alwaysImportjs: [
         'add' // [ [name].js || [name] ]

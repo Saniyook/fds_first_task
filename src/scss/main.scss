@@ -1,16 +1,31 @@
+h1,h2 {
+  font-family: QuicksandBold;
+  color: $dark_shade_100;
+  display: inline-block;
+  margin: 0;
+}
+
 h1 {
-  color: rgb(255, 0, 0);
+
+  font-size: 24px;
+
 }
 
 h2 {
-  color: rgb(255, 0, 0);
+  font-size: 19px;
 }
 
 h3 {
-  color: rgb(255, 0, 0);
+  font-family: MontseratBold;
+  font-size: 12px;
+  margin: 0;
+
+  /* identical to box height */
+  text-transform: uppercase;
 }
 
-.wrap {
-  color: $white;
-  display: flex;
+body {
+  font-family: MontseratRegular;
+  font-size: 14px;
+  color: $dark_shade_75;
 }

@@ -18,6 +18,7 @@
     "@babel/cli": "^7.6.4",
     "@babel/core": "^7.6.4",
     "@babel/preset-env": "^7.6.3",
+    "@fortawesome/fontawesome-free": "^5.11.2",
     "@lipemat/css-mqpacker": "^8.0.1",
     "autoprefixer": "^9.6.5",
     "babel-eslint": "^10.0.3",

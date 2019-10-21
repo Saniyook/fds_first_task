@@ -1,6 +1,12 @@
 // Файл создан автоматичекси смотри gulpfile.js (function writeStylesDotScss)
 
-@import "src//scss/vars.scss";
-@import "src//scss/fonts.scss";
+@import "src/scss/normalize.scss";
+@import "src/scss/vars.scss";
+@import "src/scss/fa.scss";
+@import "src/scss/fonts.scss";
+@import "src/scss/main.scss";
+@import 'src/blocks/btn/btn.scss';
+@import 'src/blocks/form/form.scss';
+@import 'src/blocks/input/input.scss';
 @import 'src/blocks/page/page.scss';
 @import 'src/blocks/page-footer/page-footer.scss';

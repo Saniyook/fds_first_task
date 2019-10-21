@@ -1,0 +1,130 @@
+.input {
+
+  &_text,
+  &_mail,
+  &_password,
+  &_password-repeat {
+    outline: none;
+    box-sizing: border-box;
+    width: 100%;
+    height: $height_main;
+    font-size: 14px;
+    border: 1px solid $dark_shade_25;
+    padding: 13px 15px;
+    border-radius: 4px;
+
+    &::placeholder {
+      color: $dark_shade_25;
+    }
+  }
+
+  &_radio {
+    display: none;
+
+    &-label {
+      display: flex;
+      align-items: center;
+
+      &:not(:first-child) {
+        margin-left: 20px;
+      }
+    }
+
+    &-span {
+      cursor: pointer;  
+      color: $dark_shade_50;
+      font-size: 14px;
+    }
+
+    &-border {
+      cursor: pointer;
+      box-sizing: border-box;
+      width: 20px;
+      height: 20px;
+      margin-right: 10px;
+      border: 1px solid $dark_shade_25;
+      border-radius: 50%;
+      position: relative;
+
+      &::after {
+        content: '';
+        position: absolute;
+        background-image: $purple_gradient;
+        opacity: 0;
+        top: calc(50% - 6px);
+        left: calc(50% - 6px);
+        border-radius: 50%;
+        width: 12px;
+        height: 12px;
+      }
+    }
+
+    &:checked {
+
+      + .input_radio-border {
+        border-color: $purple_main;
+        transition: border-color 0.2s linear;
+
+        &::after {
+          opacity: 1;
+          transition: opacity 0.2s linear;
+        }
+      }
+
+      ~ .input_radio-span {
+        color: $dark_shade_75;
+        transition: color 0.2s linear;
+      }
+    }
+  }
+
+  &_checkbox {
+    display: none;
+
+    &-label {
+      display: inline-flex;
+      align-items: center;
+    }
+
+    &-span {
+      cursor: pointer;
+      color: $dark_shade_75;
+    }
+
+    &-border {
+      cursor: pointer;
+      box-sizing: border-box;
+      position: relative;
+      margin-right: 10px;
+      width: 40px;
+      height: 20px;
+      border: 1px solid $dark_shade_25;
+      border-radius: 10px;
+
+      &::after {
+        content: '';
+        position: absolute;
+        top: calc(50% - 6px);
+        left: calc(25% - 6px);
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: $dark_shade_25;
+        transition: all 0.2s linear;
+      }
+    }
+
+    &:checked {
+
+      + .input_checkbox-border {
+        border-color: $purple_main;
+
+        &::after {
+          content: '';
+          left: calc(75% - 6px);
+          background-image: $purple_gradient;
+        }
+      }
+    }
+  }
+}

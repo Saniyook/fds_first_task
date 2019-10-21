@@ -61,12 +61,11 @@ function writeStylesDotScss(cb) {
   if (context.config.alwaysImportStyles !== undefined) // Проверка на наличие свойства в массиве
     if (context.config.alwaysImportStyles.length) { // Проверка на наличие хотя бы 1 файла
       context.config.alwaysImportStyles.forEach(fileName => {
-
-        msg += `@import "${dir.src}/scss/${fileName.split('.')[0]}.scss";\n`
+        msg += `@import "${dir.src}scss/${fileName.split('.')[0]}.scss";\n`
       })
+      
     }
   const allBlocksWithScssFiles = getDirectories('scss');
-
   allBlocksWithScssFiles.forEach(blockWithScssFile => {
     if (context.htmlBlocks.indexOf(blockWithScssFile) === -1) return
     msg += `@import '${dir.blocks}${blockWithScssFile}/${blockWithScssFile}.scss';\n`
@@ -241,13 +240,8 @@ gulp.watch([`${dir.src}pug/**/*.pug`, `!${dir.src}pug/mixins.pug`], {
   reload,
 ));
 
-// Стили Блоков: изменение
-gulp.watch([`${dir.blocks}**/*.scss`], { events: ['change'], delay: 100 }, 
-  compileSass
-)
-
-// Стили Блоков: добавление
-gulp.watch([`${dir.blocks}**/*.scss`], { events: ['add'], delay: 100 }, gulp.series(
+// Стили Блоков: добавление / изменение
+gulp.watch([`${dir.blocks}**/*.scss`], { events: ['change', 'add'], delay: 100 }, gulp.series(
   writeStylesDotScss,
   compileSass
 ))

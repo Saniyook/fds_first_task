@@ -1,0 +1,27 @@
+.form-wrap
+    +form({type: 'auth', label: "Registration"})
+      .input-wrap
+        +input({placeholder: 'Name'})
+      .input-wrap
+        +input({placeholder: 'Second name'})
+      .radio-wrap
+        +input({type: 'radio', name: 'sex', id: 'sexMale', value: 'Male', checked: true})
+        +input({type: 'radio', name: 'sex', id: 'sexFemale', value: 'Female'})
+        +input({type: 'radio', name: 'sex', id: 'sexUndefined', value: 'Other'})
+      +form__field-label({value:'Birth Date'})
+      .input-wrap
+        +input({type: 'date'})
+      +form__field-label({value:'Login Details'})
+      .input-wrap
+        +input({type: 'mail', placeholder: "Email"})
+      .input-wrap  
+        +input({type: 'password', placeholder: "Password"})
+      .input-wrap  
+        +input({type: 'password-repeat', placeholder: "Repeat password"})
+      .checkbox-wrap
+        +input({type: 'checkbox', style:'toggle', value: 'Get special offers', name:'offers'})
+      .btn-wrap_lg
+        +btn({type: 'filed', style:'arrow', value:'Go to bill', size:'lg'})
+      .accounting-wrap
+        span Already registered?
+        +btn({type: 'border', value: 'Log in', size:'md'})

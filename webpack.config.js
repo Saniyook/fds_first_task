@@ -3,7 +3,7 @@ module.exports = function (entry) {
     mode: 'production',
     entry,
     output: {
-      filename: '[name].[chunkhash].js'
+      filename: '[name].js'
     },
     module: {
       rules: [{

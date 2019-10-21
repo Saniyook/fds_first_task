@@ -1,0 +1,26 @@
+mixin input(params)
+  if params == undefinded || params == null
+    p Фигня какая-то
+  else  
+    - var {type = 'text', placeholder = '', checked = false, name='', id, value=''} = params
+    - var cls = `input input_${type}`
+    if type == 'text'
+      input(type = type, placeholder = placeholder, class=cls)
+    if type == 'date'
+      input(type = 'text', class=`input input_text input_${type}`, placeholder = placeholder || 'DD.MM.YYYY')
+    else if type == 'checkbox'
+      label(class=`${cls}-label`)
+        input(type=type, name=name, id = id, class=cls, checked = checked)
+        .input_checkbox-border
+        span(class = `${cls}-span`) #{value}
+    else if type == 'radio'
+      label(class=`${cls}-label`)
+        input(type=type, name=name, id = id, class=cls, checked = checked)
+        .input_radio-border
+        span(class = `${cls}-span`) #{value}
+    else if type == 'mail'
+      input(type=type, name=name, class = `input_${type}`, placeholder=placeholder)
+    else if type == 'password'
+      input(type=type, class=cls, placeholder=placeholder, id=id)  
+    else if type == 'password-repeat'
+      input(type='password', class=cls, placeholder=placeholder, id=id)  

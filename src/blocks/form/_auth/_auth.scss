@@ -1,0 +1,44 @@
+.form_auth {
+  display: flex;
+  flex-direction: column;
+
+  .input-wrap {
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .radio-wrap {
+    display: flex;
+    flex-direction: row;
+    width: 100%;
+    margin: 5.44px 0 3.56px;
+  }
+
+  .checkbox-wrap {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin: 5px 0;
+  }
+
+  .btn-wrap {
+
+    &_lg {
+      width: 100%;
+      margin-top: 15px;
+    }
+
+    &_md {
+      width: 100%;
+      margin: 5px 0;
+    }
+  }
+
+  .accounting-wrap {
+    margin-top: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+  }
+}
