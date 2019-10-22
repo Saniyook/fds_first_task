@@ -1,0 +1,9 @@
+mixin main-nav(params)
+  ul.main-nav
+    each link in params
+      li 
+        - let cls
+        if link.isActive
+          - cls = '_isActive'
+        a(href = link.path, class = cls) #{link.label}
+    block

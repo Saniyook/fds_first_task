@@ -1,7 +1,7 @@
 //- Стандартный шаблон страницы
 
 include mixins.pug
-
+- var navLinks = [ { label: 'Home', path: '/', isActive: true }, { label: 'About Us', path: '/about' }, { label: 'Services', path: '/services'}, { label: 'Careers', path: '/careers' }, { label: 'News', path: '/news' }, { label: 'Documentation', path: '/doc'}]
 doctype html
 html(class='page  no-js', lang='ru')
   head
@@ -28,15 +28,27 @@ html(class='page  no-js', lang='ru')
     noscript У вас отключен JavaScript. Это пугает.
 
     .page__inner
+      .page__header
+        block header
+          +header
+            +logo
+            +main-nav(navLinks)
+              li
+                .nav__accounting-wrap
+                  if userName != undefined
+                    p #{userName}
+                  else
+                    a(href = '/login')
+                      +btn({size:'nav-login', type:'border', value:'Login'})
+                    .nav__accounting-wrap-btn-wrap  
+                      a(href = '/register')
+                        +btn({size:'nav-reg', type:'filed', value:'Register'})
       .page__content
-
         block content
           p содержимое
 
-      .page__footer-wrapper
-        +page-footer()
-          block footer
-            p «Подвал»
+      .page__footer
+        block footer
 
     block page-bottom
       script(src='js/bundle.js')

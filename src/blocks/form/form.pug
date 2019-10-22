@@ -1,7 +1,7 @@
 include ./__field-label/__field-label.pug
 mixin form(params)
-  if params == undefinded || params == null
-  - var {type, label, id} = params
+  if params != undefined || params != null
+    - var {type, label, id} = params
   if (type == undefined)
     p фигня какая то
   else

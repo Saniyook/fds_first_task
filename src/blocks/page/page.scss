@@ -15,10 +15,27 @@
     min-height: 100vh;
   }
 
+  &__header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 70px;
+  }
+
   &__content {
     display: flex;
     flex-grow: 1;
     align-items: center;
     justify-content: center;
+  }
+
+  .nav__accounting-wrap {
+    display: flex;
+    flex-direction: row;
+
+    &-btn-wrap {
+      margin-left: 20px;
+    }
   }
 }

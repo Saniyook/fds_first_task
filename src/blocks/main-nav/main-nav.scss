@@ -1,0 +1,25 @@
+.main-nav {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+
+  li {
+    list-style-type: none;
+
+    &:not(:first-child) {
+      margin-left: 30px;
+    }
+  }
+
+  a {
+    font-family: MontseratRegular, sans-serif;
+    color: $dark_shade_50;
+    font-size: 14px;
+
+    &._isActive {
+      font-family: MontseratBold, sans-serif;  
+      color: $dark_shade_100;
+    }
+  }
+}

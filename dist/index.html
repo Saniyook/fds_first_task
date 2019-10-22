@@ -34,6 +34,41 @@ if(~navigator.appVersion.indexOf("Linux"))cth('linux');/*!
   <body>
     <noscript>У вас отключен JavaScript. Это пугает.</noscript>
     <div class="page__inner">
+      <div class="page__header">
+        <header class="header" role="contentinfo">
+          <div class="header__inner">
+            <div class="logo"> 
+              <object type="image/svg+xml" data="../img/logo.svg" width="40" height="40"></object>
+              <object type="image/svg+xml" data="../img/TOXIN.svg" width="54" height="13"></object>
+            </div>
+            <ul class="main-nav">
+              <li> <a class="_isActive" href="/">Home</a>
+              </li>
+              <li> <a href="/about">About Us</a>
+              </li>
+              <li> <a href="/services">Services</a>
+              </li>
+              <li> <a href="/careers">Careers</a>
+              </li>
+              <li> <a href="/news">News</a>
+              </li>
+              <li> <a href="/doc">Documentation</a>
+              </li>
+              <li>
+                <div class="nav__accounting-wrap"><a href="/login">
+                    <button class="btn btn_border btn_nav-login  btn_  btn_enabled">
+                      <div>Login</div>
+                    </button></a>
+                  <div class="nav__accounting-wrap-btn-wrap"> <a href="/register">
+                      <button class="btn btn_filed btn_nav-reg  btn_  btn_enabled">
+                        <div>Register</div>
+                      </button></a></div>
+                </div>
+              </li>
+            </ul>
+          </div>
+        </header>
+      </div>
       <div class="page__content">
         <div class="form-wrap">
           <form class="form form_auth">
@@ -51,20 +86,14 @@ if(~navigator.appVersion.indexOf("Linux"))cth('linux');/*!
                 <div>Log in</div><i class="fas fa-arrow-right"> </i>
               </button>
             </div>
-            <div class="accounting-wrap"><span class="accounting">Still haven't account?</span>
-              <button class="btn btn_border btn_md  btn_  btn_enabled">
-                <div>Sign up</div>
-              </button>
-            </div>
+            <div class="accounting-wrap"><span class="accounting">Still haven't account?</span><a href="/register">
+                <button class="btn btn_border btn_md  btn_  btn_enabled">
+                  <div>Register</div>
+                </button></a></div>
           </form>
         </div>
       </div>
-      <div class="page__footer-wrapper">
-        <footer class="page-footer" role="contentinfo">
-          <div class="page-footer__inner">
-            <p>«Подвал»</p>
-          </div>
-        </footer>
+      <div class="page__footer">
       </div>
     </div>
     <script src="js/bundle.js"></script>
