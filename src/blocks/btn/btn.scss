@@ -6,26 +6,42 @@
 
   &_lg {
     width: 100%;
+<<<<<<< HEAD
     height: 44px;
     border-radius: 22px;
+=======
+    height: $height_main;
+  }
+
+  &_md {
+    width: 100px;
+    height: $height_main;
+    background-color: transparent;
+  }
+
+  &_nav-login {
+    width: 80px;
+    height: 34px;
+  }
+
+  &_nav-reg {
+    width: 100px;
+    height: 34px;
+>>>>>>> header_and_nav
   }
 
   &_filed {
     border: none;
+    border-radius: 22px;
     background-image: $purple_gradient;
     font-family: MontseratBold, sans-serif;
     color: #fff;
   }
 
-  &_md {
-    width: 100px;
-    background-color: transparent;
-  }
 
   &_border {
     font-family: MontseratBold, sans-serif;
     color: $purple_main;
-    height: $height_main;
     border-radius: 22px;
     border: double 2px transparent;
     background-image: linear-gradient(#fff, #fff), $purple_gradient;
