@@ -5,7 +5,7 @@ mixin main-nav(params)
         if link.expanded != undefined
           li.main-nav__link.main-nav__link_x.main-nav__link_expanded
             a(href = '#', class = link.isActive ? 'isActive' : null) #{link.label}
-              i(class = 'fas fa-chevron-down')
+            span.material-icons.arrow_down keyboard_arrow_down
             ul.main-nav__expanded-list
               each expanded_link in link.expanded
                 li.main-nav__link.main-nav__link_y

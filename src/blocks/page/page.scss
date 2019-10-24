@@ -1,6 +1,7 @@
 // Сделаем viewport великим снова! (привет, IE10) http://timkadlec.com/2012/10/ie10-snap-mode-and-responsive-design/
 
 @at-root {
+
   /* stylelint-disable-next-line */
   @-ms-viewport {
     width: device-width;
@@ -16,11 +17,6 @@
 
   &__header {
     display: flex;
-<<<<<<< HEAD
-    flex-grow: 1;
-    align-items: center;
-    justify-content: center;
-=======
     justify-content: center;
     align-items: center;
     width: 100vw;
@@ -35,7 +31,7 @@
     align-items: center;
   }
 
-  
+
   &__nav-acc-wrap {
     display: inline-flex;
     flex-direction: row;
@@ -60,6 +56,7 @@
       }
     }
   }
+
   &_landing {
     display: flex;
     flex-direction: row;
@@ -71,15 +68,18 @@
     background-size: cover;
   }
 
-  &_auth {
+  &__background {
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
     flex-grow: 1;
     width: 100%;
-    background-image: url('../img/bg-auth.png');
     background-size: cover;
->>>>>>> header_and_nav
+
+    &_auth {
+      background-image: url('../img/bg-auth.png');
+    }
   }
+
 }

@@ -7,12 +7,11 @@ module.exports = {
     alwaysImportStyles: [ // [ [name].scss || [name] ]
         'normalize',
         'vars.scss',
-        'fa',
+        'material_icons',
         'fonts.scss',
         'main',
     ],
     alwaysImportjs: [
         './add.js',
-        '../../node_modules/@fortawesome/fontawesome-free/js/all.min.js'
     ],
 }
