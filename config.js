@@ -12,6 +12,7 @@ module.exports = {
         'main',
     ],
     alwaysImportjs: [
-        'add' // [ [name].js || [name] ]
+        './add.js',
+        '../../node_modules/@fortawesome/fontawesome-free/js/all.min.js'
     ],
 }

@@ -3,6 +3,7 @@
 const browserSync = require('browser-sync').create();
 const cpy = require('cpy');
 const csso = require('gulp-csso');
+const connect = require('gulp-connect');
 const del = require('del');
 const fs = require('fs')
 const getClassesFromHtml = require('get-classes-from-html')
@@ -116,11 +117,11 @@ function writeEntryJs(cb) {
   if (context.config.alwaysImportjs)
     if (context.config.alwaysImportjs.length)
       context.config.alwaysImportjs.forEach(fileName => {
-        msg += `import './${fileName.split('.')[0]}.js'`
+        msg += `import '${fileName}';\n`
       })
   allBlocksWithJsFiles.forEach(blockName => {
     if (context.htmlBlocks.indexOf(blockName) == -1) return
-    msg += `import '../blocks/${blockName}/${blockName}.js'\n`
+    msg += `import '../blocks/${blockName}/${blockName}.js';\n`
   })
 
   fs.writeFileSync(`${dir.src}js/entry.js`, msg);
@@ -180,18 +181,17 @@ function clearDistDir() {
 exports.clearBuildDir = clearDistDir;
 
 function serve() {
-  browserSync.init({
-    server: dir.dist,
+  connect.server({
     port: 8081,
-    startPath: 'index.html',
-    open: false,
-    notify: false,
+    host: '0.0.0.0',
+    root: 'dist',
+    livereload: true
   })
 }
 
 function reload(done) {
-  browserSync.reload();
-  done();
+  connect.reload();
+  done()
 }
 // Страницы: изменение, добавление
 gulp.watch([`${dir.src}pages/**/*.pug`], {
