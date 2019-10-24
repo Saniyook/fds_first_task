@@ -22,4 +22,5 @@
         +btn({type: 'filed', style:'arrow', value:'Go to bill', size:'lg'})
       .accounting-wrap
         span.accounting Already registered?
-        +btn({type: 'border', value: 'Log in', size:'md'})
+        a(href = '/login')
+          +btn({type: 'border', value: 'Log in', size:'md'})

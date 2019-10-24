@@ -3,10 +3,12 @@
 const browserSync = require('browser-sync').create();
 const cpy = require('cpy');
 const csso = require('gulp-csso');
+const connect = require('gulp-connect');
 const del = require('del');
 const fs = require('fs')
 const getClassesFromHtml = require('get-classes-from-html')
 const gulp = require('gulp')
+const notify = require ('gulp-notify')
 const plumber = require('gulp-plumber')
 const postcss = require('gulp-postcss')
 const pug = require('gulp-pug')
@@ -34,8 +36,11 @@ function compilePug() {
       }
     }))
     .pipe(pug({
-      pretty: true
-    }))
+        pretty: true
+      })
+      .on('error', notify.onError(function (error) {
+        return 'An error occurred while compiling jade.\nLook in the console for details.\n' + error;
+      })))
     .pipe(through2.obj(addClassesToBlocksList))
     .pipe(gulp.dest(dir.dist));
 }
@@ -63,7 +68,7 @@ function writeStylesDotScss(cb) {
       context.config.alwaysImportStyles.forEach(fileName => {
         msg += `@import "${dir.src}scss/${fileName.split('.')[0]}.scss";\n`
       })
-      
+
     }
   const allBlocksWithScssFiles = getDirectories('scss');
   allBlocksWithScssFiles.forEach(blockWithScssFile => {
@@ -112,11 +117,11 @@ function writeEntryJs(cb) {
   if (context.config.alwaysImportjs)
     if (context.config.alwaysImportjs.length)
       context.config.alwaysImportjs.forEach(fileName => {
-        msg += `import './${fileName.split('.')[0]}.js'`
+        msg += `import '${fileName}';\n`
       })
   allBlocksWithJsFiles.forEach(blockName => {
     if (context.htmlBlocks.indexOf(blockName) == -1) return
-    msg += `import '../blocks/${blockName}/${blockName}.js'\n`
+    msg += `import '../blocks/${blockName}/${blockName}.js';\n`
   })
 
   fs.writeFileSync(`${dir.src}js/entry.js`, msg);
@@ -176,18 +181,17 @@ function clearDistDir() {
 exports.clearBuildDir = clearDistDir;
 
 function serve() {
-  browserSync.init({
-    server: dir.dist,
+  connect.server({
     port: 8081,
-    startPath: 'index.html',
-    open: false,
-    notify: false,
+    host: '0.0.0.0',
+    root: 'dist',
+    livereload: true
   })
 }
 
 function reload(done) {
-  browserSync.reload();
-  done();
+  connect.reload();
+  done()
 }
 // Страницы: изменение, добавление
 gulp.watch([`${dir.src}pages/**/*.pug`], {
@@ -241,30 +245,48 @@ gulp.watch([`${dir.src}pug/**/*.pug`, `!${dir.src}pug/mixins.pug`], {
 ));
 
 // Стили Блоков: добавление / изменение
-gulp.watch([`${dir.blocks}**/*.scss`], { events: ['change', 'add'], delay: 100 }, gulp.series(
+gulp.watch([`${dir.blocks}**/*.scss`], {
+  events: ['change', 'add'],
+  delay: 100
+}, gulp.series(
   writeStylesDotScss,
   compileSass
 ))
 
 // Стилевые глобальные файлы: все события
-gulp.watch([`${dir.src}scss/**/*.scss`, `!${dir.src}scss/style.scss`], { events: ['all'], delay: 100 },
+gulp.watch([`${dir.src}scss/**/*.scss`, `!${dir.src}scss/style.scss`], {
+    events: ['all'],
+    delay: 100
+  },
   compileSass,
 )
 
-gulp.watch([`${dir.src}js/**/*.js`, `!${dir.src}js/entry.js`, `${dir.blocks}**/*.js`], { events: ['all'], delay: 100 }, gulp.series(
+gulp.watch([`${dir.src}js/**/*.js`, `!${dir.src}js/entry.js`, `${dir.blocks}**/*.js`], {
+  events: ['all'],
+  delay: 100
+}, gulp.series(
   writeEntryJs,
   buildJs,
   reload
 ));
 
 // Картинки: все события
-gulp.watch([`${dir.src}img/*.{jpg,jpeg,png,gif,svg,webp}`], { events: ['all'], delay: 100 }, gulp.series(copyAssets, reload));
+gulp.watch([`${dir.src}img/*.{jpg,jpeg,png,gif,svg,webp}`], {
+  events: ['all'],
+  delay: 100
+}, gulp.series(copyAssets, reload));
 
 // Шрифты: все события
-gulp.watch([`${dir.src}fonts/*.{woff,woff2,ttf,eot,svg}`], { events: ['all'], delay: 100 }, gulp.series(copyAssets, reload));
+gulp.watch([`${dir.src}fonts/*.{woff,woff2,ttf,eot,svg}`], {
+  events: ['all'],
+  delay: 100
+}, gulp.series(copyAssets, reload));
 
 // Статика: все события
-gulp.watch([`${dir.src}static`], { events: ['all'], delay: 100 }, gulp.series(copyAssets, reload));
+gulp.watch([`${dir.src}static`], {
+  events: ['all'],
+  delay: 100
+}, gulp.series(copyAssets, reload));
 
 // Функции хэлперы
 

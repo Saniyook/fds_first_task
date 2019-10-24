@@ -1,7 +1,5 @@
-//- Стандартный шаблон страницы
-
 include mixins.pug
-
+- var navLinks = [ { label: 'Home', path: '/', isActive: true }, { label: 'About Us', path: '/about' }, { label: 'Services', path: '/services'}, { label: 'Careers', path: '/careers', expanded: [{label: 'First', path:'/careers/first'}, {label: 'Second', path:'/careers/second'}] }, { label: 'News', path: '/news' }, { label: 'Documentation', path: '/doc', expanded: [{label: 'First', path:'/documentation/first'}, {label: 'Second', path:'/documentation/second'}, {label: 'Third', path:'/documentation/second'}]}]
 doctype html
 html(class='page  no-js', lang='ru')
   head
@@ -20,8 +18,7 @@ html(class='page  no-js', lang='ru')
       link(href='https://fonts.googleapis.com/css?family=Open+Sans:700&display=swap', rel='stylesheet')
       link(rel='stylesheet', href='css/style.css')
       script
-        include ../js/head-script.js
-        include ../../node_modules/@fortawesome/fontawesome-free/js/all.min.js
+        block scripts
         
 
   body
@@ -29,14 +26,28 @@ html(class='page  no-js', lang='ru')
 
     .page__inner
       .page__content
+        .page__header
+          .container
+            +header
+              +logo
+              .page__nav-acc-wrap
+                +main-nav(navLinks)
+                .accounting-wrap
 
+                  if userName != undefined
+                    p.user-name #{userName}
+                  else
+                    a(href = '#')
+                      +btn({size:'nav-login', type:'border', value:'Login'})
+                    .accounting-wrap-btn 
+                      a(href = '#')
+                        +btn({size:'nav-reg', type:'filed', value:'Register'})
+       
         block content
-          p содержимое
 
-      .page__footer-wrapper
-        +page-footer()
+      .page__footer
+        .container
           block footer
-            p «Подвал»
 
     block page-bottom
       script(src='js/bundle.js')

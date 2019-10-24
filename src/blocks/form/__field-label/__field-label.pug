@@ -1,7 +1,5 @@
 mixin form__field-label(params)
-  if params == undefinded || params == null
-    p Фигня какаая-то
-  else  
+  if params != undefined || params != null
     - var { value } = params
-    .form__field-label
-        h3 #{value}
+  .form__field-label
+      h3 #{value}
