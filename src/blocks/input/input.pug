@@ -7,15 +7,15 @@ mixin input(params)
   if type == 'date'
     input(type = 'text', class=`input input_text input_${type}`, placeholder = placeholder || 'DD.MM.YYYY')
   else if type == 'checkbox'
-    label(class=`${cls}-label`)
+    label(class=`${cls}__label`)
       input(type=type, name=name, id = id, class=cls, checked = checked)
-      .input_checkbox-border
-      span(class = `${cls}-span`) #{value}
+      .input_checkbox__border
+      span(class = `${cls}__span`) #{value}
   else if type == 'radio'
-    label(class=`${cls}-label`)
+    label(class=`${cls}__label`)
       input(type=type, name=name, id = id, class=cls, checked = checked)
-      .input_radio-border
-      span(class = `${cls}-span`) #{value}
+      .input_radio__border
+      span(class = `${cls}__span`) #{value}
   else if type == 'mail'
     input(type=type, name=name, class = `input_${type}`, placeholder=placeholder || 'Email')
   else if type == 'password'

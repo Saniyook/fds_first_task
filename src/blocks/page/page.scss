@@ -12,7 +12,6 @@
   &__inner {
     display: flex;
     flex-direction: column;
-    min-height: 100vh;
   }
 
   &__header {
@@ -21,21 +20,60 @@
     align-items: center;
     width: 100vw;
     height: 70px;
+    box-shadow: 0 10px 20px rgba(31, 32, 65, 0.05);
   }
 
   &__content {
     display: flex;
-    flex-grow: 1;
+    flex-direction: column;
+    min-height: 100vh;
     align-items: center;
-    justify-content: center;
   }
 
-  .nav__accounting-wrap {
+  
+  &__nav-acc-wrap {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+
+    .accounting-wrap {
+      display: flex;
+      flex-direction: row;
+      margin-left: 30px;
+
+      &-btn {
+        margin-left: 20px;
+      }
+
+      .user-name {
+        display: inline-flex;
+        flex-direction: row;
+        align-items: center;
+        height: 30px;
+        border-left: 1px solid rgba(31, 32, 65, 0.1);
+        padding-left: 30px;
+      }
+    }
+  }
+  &_landing {
     display: flex;
     flex-direction: row;
+    justify-content: center;
+    padding: 70px 0;
+    flex-grow: 1;
+    width: 100%;
+    background-image: url('../img/bg-main.png');
+    background-size: cover;
+  }
 
-    &-btn-wrap {
-      margin-left: 20px;
-    }
+  &_auth {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 1;
+    width: 100%;
+    background-image: url('../img/bg-auth.png');
+    background-size: cover;
   }
 }
