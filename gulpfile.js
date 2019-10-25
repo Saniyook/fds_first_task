@@ -26,9 +26,7 @@ function compilePug() {
   const pagesList = [
     `${dir.src}/pages/**/*.pug`
   ]
-  return gulp.src(pagesList, {
-      since: gulp.lastRun(compilePug)
-    })
+  return gulp.src(pagesList)
     .pipe(plumber({
       errorHandler: function (err) {
         console.log(err.message);
@@ -181,16 +179,17 @@ function clearDistDir() {
 exports.clearBuildDir = clearDistDir;
 
 function serve() {
-  connect.server({
+  browserSync.init({
+    server: dir.dist,
     port: 8081,
-    host: '0.0.0.0',
-    root: 'dist',
-    livereload: true
-  })
+    startPath: 'index.html',
+    open: false,
+    notify: false,
+  });
 }
 
 function reload(done) {
-  connect.reload();
+  browserSync.reload();
   done()
 }
 // Страницы: изменение, добавление

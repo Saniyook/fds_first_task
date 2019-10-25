@@ -1,5 +1,6 @@
 include mixins.pug
-- var navLinks = [ { label: 'Home', path: '/', isActive: true }, { label: 'About Us', path: '/about' }, { label: 'Services', path: '/services'}, { label: 'Careers', path: '/careers', expanded: [{label: 'First', path:'/careers/first'}, {label: 'Second', path:'/careers/second'}] }, { label: 'News', path: '/news' }, { label: 'Documentation', path: '/doc', expanded: [{label: 'First', path:'/documentation/first'}, {label: 'Second', path:'/documentation/second'}, {label: 'Third', path:'/documentation/second'}]}]
+include vars.pug
+
 doctype html
 html(class='page  no-js', lang='ru')
   head
@@ -28,26 +29,12 @@ html(class='page  no-js', lang='ru')
       .page__content
         .page__header
           .container
-            +header
-              +logo
-              .page__nav-acc-wrap
-                +main-nav(navLinks)
-                .accounting-wrap
-
-                  if userName != undefined
-                    p.user-name #{userName}
-                  else
-                    a(href = '#')
-                      +btn({size:'nav-login', type:'border', value:'Login'})
-                    .accounting-wrap-btn 
-                      a(href = '#')
-                        +btn({size:'nav-reg', type:'filed', value:'Register'})
-       
+            +header({navLinks, user})
         block content
 
       .page__footer
         .container
-          block footer
+          +footer
 
     block page-bottom
       script(src='js/bundle.js')

@@ -1,12 +1,10 @@
 .container {
   box-sizing: border-box;
   display: flex;
-  flex-direction: row;
-  justify-content: space-between;
   flex-wrap: wrap;
+  flex-direction: row;
   align-items: center;
   max-width: 1220px;
-  min-width: 990px;
   padding: 0 30px;
   flex-grow: 1;
 

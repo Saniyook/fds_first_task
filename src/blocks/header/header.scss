@@ -1,6 +1,44 @@
 .header {
   width: 100%;
   display: flex;
+  flex-wrap: wrap;
   flex-direction: row;
-  justify-content: space-between;
+  align-items: center;
+
+  &__accounting-wrap {
+    display: flex;
+    flex-direction: row;
+    margin-left: 30px;
+
+    &-btn {
+      margin-left: 20px;
+    }
+  }
+
+  &__user-name {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    height: 30px;
+    margin: 0;
+    border-left: 1px solid rgba(31, 32, 65, 0.1);
+    padding-left: 30px;
+  }
+
+  &__nav-acc-wrap {
+    display: inline-flex;
+    flex-grow: 0.5;
+    flex-direction: row;
+    align-items: center;
+    justify-content: flex-end;
+  }
+
+  &__logo-wrap {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    flex-grow: 0.5;
+    margin: auto;
+  }
 }

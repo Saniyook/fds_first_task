@@ -1,10 +1,9 @@
 extends ../pug/layout.pug
-
 block meta
   title Главная
   meta(name='description', content='')
-
+  - var user = {userName: 'Saniyook', userID: 007}
 block content
   .page__background.page__background_auth
     .container.container_center
-      include ../components/registration-form.pug 
+      include ../components/registration-form.pug

@@ -1,5 +1,19 @@
 mixin header(params)
-  if params != undefined || params != null
-    - 
-  header.header(role='contentinfo')&attributes(attributes)
-      block
+  if params != undefined && params != null
+    - var {navLinks, user} = params
+  if user != undefined && user != null
+    - var {userName, userID} = user
+  header.header
+    .header__logo-wrap
+      +logo 
+    .header__nav-acc-wrap  
+      +main-nav(navLinks)
+      .header__accounting-wrap
+        if userName != undefined
+            p.header__user-name #{userName}
+        else
+          a(href = '#')
+            +btn({size:'nav-login', type:'border', value:'Login'})
+          .header__accounting-wrap-btn 
+            a(href = '#')
+              +btn({size:'nav-reg', type:'filed', value:'Register'})
