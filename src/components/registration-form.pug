@@ -1,26 +1,26 @@
 .form-wrap
     +form({type: 'auth', label: "Registration"})
-      .input-wrap
+      .form__input-wrap
         +input({placeholder: 'Name'})
-      .input-wrap
+      .form__input-wrap
         +input({placeholder: 'Second name'})
-      .radio-wrap
+      .form__radio-wrap
         +input({type: 'radio', name: 'sex', id: 'sexMale', value: 'Male', checked: true})
         +input({type: 'radio', name: 'sex', id: 'sexFemale', value: 'Female'})
         +input({type: 'radio', name: 'sex', id: 'sexUndefined', value: 'Other'})
       +form__field-label({value:'Birth Date'})
-      .input-wrap
+      .form__input-wrap
         +input({type: 'date'})
       +form__field-label({value:'Login Details'})
-      .input-wrap
+      .form__input-wrap
         +input({type: 'mail', placeholder: "Email"})
-      .input-wrap  
+      .form__input-wrap  
         +input({type: 'password', placeholder: "Password"})
-      .checkbox-wrap
+      .form__checkbox-wrap
         +input({type: 'checkbox', style:'toggle', value: 'Get special offers', name:'offers'})
-      .btn-wrap_lg
+      .form__btn-wrap_lg
         +btn({type: 'filed', style:'arrow', value:'Go to bill', size:'lg'})
-      .accounting-wrap
-        span.accounting Already registered?
+      .form__accounting-wrap
+        span.form__accounting Already registered?
         a(href = '/login')
           +btn({type: 'border', value: 'Log in', size:'md'})

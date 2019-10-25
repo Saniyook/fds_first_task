@@ -20,7 +20,7 @@
     <noscript>У вас отключен JavaScript. Это пугает.</noscript>
     <div class="page__inner">
       <div class="page__content">
-        <div class="page__header">
+        <div class="page__cell page__cell_header">
           <div class="container">
             <header class="header">
               <div class="header__logo-wrap"><a href="/">
@@ -32,20 +32,14 @@
                     <li class="main-nav__link main-nav__link_x"><a class="_isActive" href="#">Home</a></li>
                     <li class="main-nav__link main-nav__link_x"><a href="#">About Us</a></li>
                     <li class="main-nav__link main-nav__link_x"><a href="#">Services</a></li>
-                    <li class="main-nav__link main-nav__link_x main-nav__link_expanded"><a href="#">Careers</a><span class="material-icons arrow_down">keyboard_arrow_down</span>
+                    <li class="main-nav__link main-nav__link_x main-nav__link_expanded"><a href="#">Careers</a><i class="material-icons arrow_down">keyboard_arrow_down</i>
                       <ul class="main-nav__expanded-list">
                         <li class="main-nav__link main-nav__link_y"><a href="#">First</a></li>
                         <li class="main-nav__link main-nav__link_y"><a href="#">Second</a></li>
                       </ul>
                     </li>
                     <li class="main-nav__link main-nav__link_x"><a href="#">News</a></li>
-                    <li class="main-nav__link main-nav__link_x main-nav__link_expanded"><a href="#">Documentation</a><span class="material-icons arrow_down">keyboard_arrow_down</span>
-                      <ul class="main-nav__expanded-list">
-                        <li class="main-nav__link main-nav__link_y"><a href="#">First</a></li>
-                        <li class="main-nav__link main-nav__link_y"><a href="#">Second</a></li>
-                        <li class="main-nav__link main-nav__link_y"><a href="#">Third</a></li>
-                      </ul>
-                    </li>
+                    <li class="main-nav__link main-nav__link_x"><a href="#">Documentation</a></li>
                   </ul>
                 </nav>
                 <div class="header__accounting-wrap">
@@ -62,13 +56,13 @@
                 <div class="form__label">
                   <h1>Registration</h1>
                 </div>
-                <div class="input-wrap">
+                <div class="form__input-wrap">
                   <input class="input input_text" type="text" placeholder="Name"/>
                 </div>
-                <div class="input-wrap">
+                <div class="form__input-wrap">
                   <input class="input input_text" type="text" placeholder="Second name"/>
                 </div>
-                <div class="radio-wrap">
+                <div class="form__radio-wrap">
                   <label class="input input_radio__label">
                     <input class="input input_radio" type="radio" name="sex" id="sexMale" checked="checked"/>
                     <div class="input_radio__border"></div><span class="input input_radio__span">Male</span>
@@ -85,30 +79,30 @@
                 <div class="form__field-label">
                   <h3>Birth Date</h3>
                 </div>
-                <div class="input-wrap">
-                  <input class="input input_text input_date" type="text" placeholder="DD.MM.YYYY"/>
+                <div class="form__input-wrap">
+                  <input class="input input_text" type="text" placeholder="DD.MM.YYYY"/>
                 </div>
                 <div class="form__field-label">
                   <h3>Login Details</h3>
                 </div>
-                <div class="input-wrap">
-                  <input class="input_mail" type="mail" name="" placeholder="Email"/>
+                <div class="form__input-wrap">
+                  <input class="input input_mail" type="mail" placeholder="Email"/>
                 </div>
-                <div class="input-wrap"> 
+                <div class="form__input-wrap"> 
                   <input class="input input_password" type="password" placeholder="Password"/>
                 </div>
-                <div class="checkbox-wrap">
+                <div class="form__checkbox-wrap">
                   <label class="input input_checkbox__label">
                     <input class="input input_checkbox" type="checkbox" name="offers"/>
                     <div class="input_checkbox__border"></div><span class="input input_checkbox__span">Get special offers</span>
                   </label>
                 </div>
-                <div class="btn-wrap_lg">
+                <div class="form__btn-wrap_lg">
                   <button class="btn btn_filed btn_lg  btn_arrow  btn_enabled">
-                    <div>Go to bill</div><span class="material-icons material-icons_arrow-forward">arrow_forward</span>
+                    <div>Go to bill</div><i class="material-icons material-icons_arrow-forward">arrow_forward</i>
                   </button>
                 </div>
-                <div class="accounting-wrap"><span class="accounting">Already registered?</span><a href="/login">
+                <div class="form__accounting-wrap"><span class="form__accounting">Already registered?</span><a href="/login">
                     <button class="btn btn_border btn_md  btn_  btn_enabled">
                       <div>Log in</div>
                     </button></a></div>
@@ -117,8 +111,66 @@
           </div>
         </div>
       </div>
-      <div class="page__footer">
+      <div class="page__cell page__cell_footer-links">
         <div class="container">
+          <div class="footer-links">
+            <div class="footer-links__column"><a href="/">
+                <div class="logo"><img src="../img/logo.svg" width="40" height="40"/><img src="../img/TOXIN.svg" width="54" height="13"/></div></a>
+              <div class="footer-links__item">
+                <p class="footer-links__text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt enim deleniti recusandae quam repudiandae fugit.</p>
+              </div>
+            </div>
+            <div class="footer-links__column">
+              <ul class="footer-links__list">
+                <li class="footer__list__label"><a href="/">
+                    <h3>Navigation</h3></a></li>
+                <li class="footer-links__item footer-links__item_link"><a href="/about">About Us</a></li>
+                <li class="footer-links__item footer-links__item_link"><a href="/news">News</a></li>
+                <li class="footer-links__item footer-links__item_link"><a href="/support">Support</a></li>
+                <li class="footer-links__item footer-links__item_link"><a href="/products">Products</a></li>
+              </ul>
+            </div>
+            <div class="footer-links__column">
+              <ul class="footer-links__list">
+                <li class="footer__list__label"><a href="/about">
+                    <h3>About Us</h3></a></li>
+                <li class="footer-links__item footer-links__item_link"><a href="/about/we">Who we are</a></li>
+                <li class="footer-links__item footer-links__item_link"><a href="/about/team">Our Team</a></li>
+                <li class="footer-links__item footer-links__item_link"><a href="/about/careers">Careers</a></li>
+                <li class="footer-links__item footer-links__item_link"><a href="/about/investors">Investors</a></li>
+              </ul>
+            </div>
+            <div class="footer-links__column">
+              <ul class="footer-links__list">
+                <li class="footer__list__label"><a href="/support">
+                    <h3>Support</h3></a></li>
+                <li class="footer-links__item footer-links__item_link"><a href="/support/doc">Documentation</a></li>
+                <li class="footer-links__item footer-links__item_link"><a href="/support/community">Community</a></li>
+                <li class="footer-links__item footer-links__item_link"><a href="/support/touch">Get in Touch</a></li>
+              </ul>
+            </div>
+            <div class="footer-links__column footer-links__column_subsctibe">         
+              <ul class="footer-links__list">
+                <li class="footer__list__label">
+                  <h3>Subscribe to our newsletter</h3>
+                </li>
+                <li class="footer-links__item">
+                  <p class="footer-links__text">Receive our latest news and promotions in your inbox!</p>
+                </li>
+                <li class="footer-links__item footer-links__item_subscribe">
+                  <input class="input input_mail" type="mail" placeholder="Your email address" id="subscribe_mail_input"/><i class="material-icons arrow-forward" id="subscribe_mail_button">arrow_forward</i>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="page__cell page__cell_footer">
+        <div class="container">
+          <footer class="footer">
+            <p class="footer__copyright">Copyright © 2018 Toxin UI Kit. All rights reserved.</p>
+            <div class="footer__socials"><img class="footer__social-icon footer__social-icon_facebook" src="img/facebook.svg"/><img class="footer__social-icon footer__social-icon_twitter" src="img/twitter.svg"/><img class="footer__social-icon footer__social-icon_inst" src="img/inst.svg"/></div>
+          </footer>
         </div>
       </div>
     </div>

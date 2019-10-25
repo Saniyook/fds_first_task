@@ -26,15 +26,19 @@ html(class='page  no-js', lang='ru')
     noscript У вас отключен JavaScript. Это пугает.
 
     .page__inner
+
       .page__content
-        .page__header
+        .page__cell.page__cell_header
           .container
             +header({navLinks, user})
         block content
 
-      .page__footer
+      .page__cell.page__cell_footer-links
+        .container
+          +footer-links(linksList)
+
+      .page__cell.page__cell_footer
         .container
           +footer
-
     block page-bottom
       script(src='js/bundle.js')

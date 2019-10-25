@@ -1,12 +1,12 @@
 .form-wrap
   +form({type: 'auth', label: "Log in"})
-    .input-wrap  
+    .form__input-wrap  
       +input({type:'mail'})
-    .input-wrap  
+    .form__input-wrap  
       +input({type:'password'})
-    .btn-wrap_lg
+    .form__btn-wrap_lg
       +btn({size:'lg', type:'filed', style:'arrow', value: 'Log in'})
-    .accounting-wrap
+    .form__accounting-wrap
       span.accounting Still haven't account?
       a(href = '/register')
         +btn({type: 'border', value: 'Register', size:'md'})      

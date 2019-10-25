@@ -1,0 +1,24 @@
+mixin footer-links(linksList)
+  .footer-links
+    .footer-links__column
+      +logo()
+      .footer-links__item
+        p.footer-links__text Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt enim deleniti recusandae quam repudiandae fugit.
+    for list in linksList
+      .footer-links__column
+        ul.footer-links__list
+          li.footer__list__label
+            a(href=list.path)
+              h3 #{list.label}
+          for link in list.links
+            li.footer-links__item.footer-links__item_link
+              a(href = link.path) #{link.value}
+    .footer-links__column.footer-links__column_subsctibe          
+      ul.footer-links__list
+        li.footer__list__label
+          h3 Subscribe to our newsletter
+        li.footer-links__item
+          p.footer-links__text Receive our latest news and promotions in your inbox!
+        li.footer-links__item.footer-links__item_subscribe
+          +input({type:'mail', placeholder: 'Your email address', id:'subscribe_mail_input'})
+          i(id='subscribe_mail_button').material-icons.arrow-forward arrow_forward
