@@ -8,7 +8,7 @@ const del = require('del');
 const fs = require('fs')
 const getClassesFromHtml = require('get-classes-from-html')
 const gulp = require('gulp')
-const notify = require ('gulp-notify')
+const notify = require('gulp-notify')
 const plumber = require('gulp-plumber')
 const postcss = require('gulp-postcss')
 const pug = require('gulp-pug')
@@ -158,6 +158,15 @@ function copyAssets(cb) {
       to: `${dir.dist}`
     }
   ]
+  //Copying blocks assets
+  context.htmlBlocks.forEach( (blockName) => {
+   if (fileExist(`${dir.blocks}/${blockName}/img`)) {
+    srcs.push({
+      from: `${dir.blocks}${blockName}/img`,
+      to: `${dir.dist}img`
+  })
+   }
+  })
   srcs.forEach(src => {
     (async () => {
       await cpy(src.from, src.to)
@@ -214,6 +223,10 @@ gulp.watch([`${dir.src}pages/**/*.pug`], {
     });
   });
 
+// Компоненты: Все события
+gulp.watch([`${dir.src}components/**/*.pug`], {
+  delay: 100
+}, gulp.series(compilePug, reload))
 // Разметка Блоков: изменение
 gulp.watch([`${dir.blocks}**/*.pug`], {
   events: ['change'],
@@ -339,14 +352,14 @@ function fileExist(filepath) {
 
 exports.build = gulp.series(
   gulp.parallel(clearDistDir, writePugMixinsFile),
-  gulp.parallel(compilePug, copyAssets),
+  gulp.series(compilePug, copyAssets),
   gulp.parallel(writeStylesDotScss, writeEntryJs),
   gulp.parallel(compileSass, buildJs),
 )
 
 exports.default = gulp.series(
   gulp.parallel(clearDistDir, writePugMixinsFile),
-  gulp.parallel(compilePug, copyAssets),
+  gulp.series(compilePug, copyAssets),
   gulp.parallel(writeStylesDotScss, writeEntryJs),
   gulp.parallel(compileSass, buildJs),
   serve,

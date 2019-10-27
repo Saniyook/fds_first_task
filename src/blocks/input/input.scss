@@ -3,9 +3,10 @@
   &_text,
   &_mail,
   &_password,
-  &_date {
-    outline: none;
+  &_date,
+  &_dropdown {
     box-sizing: border-box;
+    background: transparent;
     width: 100%;
     color: $dark_shade_75;
     height: $height_main;
@@ -16,6 +17,7 @@
     transition: border-color $animation-time_default linear;
 
     &:focus {
+      outline: none;
       border-color: $dark_shade_50;
     }
 
@@ -132,5 +134,12 @@
         }
       }
     }
+  }
+
+  &_dropdown {
+    position: relative;
+    z-index: 10;
+    text-shadow: 0 0 0 $dark_shade_75;
+    cursor: pointer;
   }
 }

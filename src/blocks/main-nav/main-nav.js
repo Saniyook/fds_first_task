@@ -1,5 +1,3 @@
-const $ = require('jquery')
-
 $(document).ready(function() {
     let $expandedLists = $('.main-nav__link_expanded')
 

@@ -9,9 +9,9 @@ module.exports = {
         'vars.scss',
         'material_icons',
         'fonts.scss',
+        'datepicker',
         'main',
     ],
     alwaysImportjs: [
-        './add.js',
     ],
 }

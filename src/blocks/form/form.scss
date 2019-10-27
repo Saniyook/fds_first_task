@@ -15,20 +15,18 @@
     }
   }
 
-  &-wrap {
-    background-color: #fff;
-    box-sizing: border-box;
-    box-shadow: 0 0 25px rgba(0, 0, 0, 0.2);
-    border-radius: 4px;
-    width: 380px;
-    border: 1px solid rgba(0, 0, 0, 0.12);
-    padding: 30px;
-    display: inline-block;
-  }
-
   &__input-wrap {
+    position: relative;
     width: 100%;
     margin: 5px 0;
+
+    .arrow-down {
+      position: absolute;
+      top: calc(50% - 12px);
+      left: calc(100% - 36px);
+      color: $dark_shade_50;
+      z-index: 5;
+    }
   }
 
   &__radio-wrap {
@@ -53,8 +51,7 @@
     }
 
     &_md {
-      width: 100%;
-      margin: 5px 0;
+      width: 100px;
     }
   }
 
@@ -68,5 +65,21 @@
 
   &__accounting {
     color: #000;
+  }
+
+  &__dropdown {
+
+    &_md {
+      width: 150px;
+    }
+
+    &-wrap {
+      display: flex;
+
+      &_row {
+        flex-direction: row;
+        justify-content: space-between;
+      }
+    }
   }
 }

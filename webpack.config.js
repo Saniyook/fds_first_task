@@ -1,3 +1,5 @@
+const webpack = require('webpack')
+
 module.exports = function (entry) {
   return {
     mode: 'production',
@@ -11,6 +13,13 @@ module.exports = function (entry) {
         exclude: /(node_modules)/,
         loader: 'babel-loader',
       }]
-    }
+    },
+    plugins: [
+      new webpack.ProvidePlugin({
+        $: "jquery",
+        jQuery: "jquery",
+        "window.jQuery": "jquery"
+      })
+    ]
   }
 }
