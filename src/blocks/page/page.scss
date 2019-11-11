@@ -10,7 +10,7 @@
 
 .page {
 
-  &__inner {
+  &__wrap {
     display: flex;
     overflow: hidden;
     flex-direction: column;
@@ -21,7 +21,6 @@
     justify-content: center;
     align-items: center;
     width: 100%;
-
 
     &_header {
       height: 70px;
@@ -47,10 +46,10 @@
 
   &__background {
     display: flex;
-    padding: 30px 0;
-    justify-content: center;
     flex-direction: row;
     flex-grow: 1;
+    justify-content: center;
+    padding: 30px 0;
     background-size: cover;
     background-attachment: fixed;
 
@@ -59,7 +58,9 @@
       align-items: center;
     }
 
-    &_landing {}
+    &_landing {
+      // slider in page.js
+    }
   }
 
   &__form-wrap {
@@ -69,6 +70,6 @@
     border-radius: 4px;
     width: 380px;
     border: 1px solid rgba(0, 0, 0, 0.12);
-    padding: 30px;
+    padding: 29px;
   }
 }

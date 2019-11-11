@@ -18,7 +18,7 @@
   </head>
   <body>
     <noscript>У вас отключен JavaScript. Это пугает.</noscript>
-    <div class="page__inner">
+    <div class="page__wrap">
       <div class="page__content">
         <div class="page__cell page__cell_header">
           <div class="container">
@@ -29,17 +29,17 @@
               <div class="header__nav-acc-wrap"> 
                 <nav class="main-nav">
                   <ul>
-                    <li class="main-nav__link main-nav__link_x"><a class="_isActive" href="#">Home</a></li>
-                    <li class="main-nav__link main-nav__link_x"><a href="#">About Us</a></li>
-                    <li class="main-nav__link main-nav__link_x"><a href="#">Services</a></li>
-                    <li class="main-nav__link main-nav__link_x main-nav__link_expanded"><a href="#">Careers</a><i class="material-icons arrow_down">keyboard_arrow_down</i>
+                    <li class="main-nav__link main-nav__link_x"><a class="_isActive" href="/">Home</a></li>
+                    <li class="main-nav__link main-nav__link_x"><a href="/about">About Us</a></li>
+                    <li class="main-nav__link main-nav__link_x"><a href="/services">Services</a></li>
+                    <li class="main-nav__link main-nav__link_x main-nav__link_expanded"><a href="#">Careers</a><i class="material-icons keyboard_arrow_down">keyboard_arrow_down</i>
                       <ul class="main-nav__expanded-list">
                         <li class="main-nav__link main-nav__link_y"><a href="#">First</a></li>
                         <li class="main-nav__link main-nav__link_y"><a href="#">Second</a></li>
                       </ul>
                     </li>
-                    <li class="main-nav__link main-nav__link_x"><a href="#">News</a></li>
-                    <li class="main-nav__link main-nav__link_x"><a href="#">Documentation</a></li>
+                    <li class="main-nav__link main-nav__link_x"><a href="/news">News</a></li>
+                    <li class="main-nav__link main-nav__link_x"><a href="/support/doc">Documentation</a></li>
                   </ul>
                 </nav>
                 <div class="header__accounting-wrap"><a href="/login.html">
@@ -58,36 +58,33 @@
             <div class="page__form-wrap">
               <form class="form form_date-pick">
                 <div class="form__label">
-                  <h1>We will find numbers according to your wishes</h1>
+                  <h1>We will find rooms according to your wishes</h1>
                 </div>
-                <div class="form__dropdown-wrap form__dropdown-wrap_row datepicker-wrap">
-                  <div class="form__dropdown_md">
-                    <div class="form__field-label">
-                      <h3>Arrival</h3>
+                <div class="form__block">
+                  <div class="form__dropdown-wrap form__dropdown-wrap_row datepicker-wrap">
+                    <div class="form__dropdown_md">
+                      <div class="form__block-label">Arrival</div>
+                      <div class="form__input-wrap">
+                        <input class="$input input_dropdown input_dropdown-date" type="text" placeholder="DD.MM.YYYY" id="arrival-date"/><i class="material-icons arrow-down">keyboard_arrow_down</i>
+                      </div>
                     </div>
-                    <div class="form__input-wrap">
-                      <input class="input input_dropdown input input_dropdown-date" type="text" placeholder="DD.MM.YYYY" id="arrival-date"/><i class="material-icons arrow-down">keyboard_arrow_down</i>
-                    </div>
-                  </div>
-                  <div class="form__dropdown_md">
-                    <div class="form__field-label">
-                      <h3>Departure</h3>
-                    </div>
-                    <div class="form__input-wrap">
-                      <input class="input input_dropdown input input_dropdown-date" type="text" placeholder="DD.MM.YYYY" id="departure-date"/><i class="material-icons arrow-down">keyboard_arrow_down</i>
+                    <div class="form__dropdown_md">
+                      <div class="form__block-label">Departure</div>
+                      <div class="form__input-wrap">
+                        <input class="$input input_dropdown input_dropdown-date" type="text" placeholder="DD.MM.YYYY" id="departure-date"/><i class="material-icons arrow-down">keyboard_arrow_down</i>
+                      </div>
                     </div>
                   </div>
                 </div>
-                <div class="form__field-label">
-                  <h3>Arrival</h3>
+                <div class="form__block">
+                  <div class="form__block-label">Arrival</div>
+                  <div class="form__input-wrap guestpicker-wrap">
+                    <input class="$input input_dropdown input_dropdown-" type="text" placeholder="Number of guests" id="guest-counter" readonly="readonly"/><i class="material-icons arrow-down">keyboard_arrow_down</i>
+                  </div>
                 </div>
-                <div class="form__input-wrap">
-                  <input class="input input_dropdown" type="text" placeholder="Number of guests" id="guest-counter"/><i class="material-icons arrow-down">keyboard_arrow_down</i>
-                </div>
-                <div class="form__btn-wrap_lg">
-                  <button class="btn btn_filled btn_lg  btn_arrow  btn_enabled" type="button">Find a room<i class="material-icons material-icons_arrow-forward">arrow_forward</i>
-                  </button>
-                </div>
+                <div class="form__btn-wrap_lg"><a href="/rooms.html">
+                    <button class="btn btn_filled btn_lg  btn_arrow  btn_enabled" type="button">Find a room<i class="material-icons material-icons_arrow-forward">arrow_forward</i>
+                    </button></a></div>
               </form>
             </div>
           </div>
@@ -140,7 +137,7 @@
                   <p class="footer-links__text">Receive our latest news and promotions in your inbox!</p>
                 </li>
                 <li class="footer-links__item footer-links__item_subscribe">
-                  <input class="input input_mail" type="mail" placeholder="Your email address" id="subscribe_mail_input"/><i class="material-icons arrow-forward" id="subscribe_mail_button">arrow_forward</i>
+                  <input class="input input_mail" type="mail" placeholder="Your email address"/><i class="material-icons arrow-forward" id="subscribe_mail_button">arrow_forward</i>
                 </li>
               </ul>
             </div>

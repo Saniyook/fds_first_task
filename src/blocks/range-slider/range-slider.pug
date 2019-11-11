@@ -1,0 +1,13 @@
+mixin range-slider(params)
+  if params != undefined && params != null
+    - const {min = 0, max = 2 * min || 100, start = 0, end = max / 2, name = ''} = params
+    input(type = 'text',
+     class = 'js-range-slider',
+     data-min = min, data-max = max,
+     data-from = start,
+     data-to = end,
+     data-type = 'double',
+     name = name
+    )
+  else 
+    p Oops, object expected but get null or undefined 

@@ -53,67 +53,30 @@
             </header>
           </div>
         </div>
-        <div class="page__background page__background_auth">
-          <div class="container container_center">
-            <div class="page__form-wrap">
-              <form class="form form_auth">
-                <div class="form__label">
-                  <h1>Registration</h1>
-                </div>
-                <div class="form__block">
-                  <div class="form__input-wrap">
-                    <input class="input input_text" type="text" placeholder="Name"/>
+        <div class="page__background">
+          <div class="container">
+            <div class="page__aside">
+              <div class="page_form-wrap page__form-frap_aside">
+                <div class="form_block form__block_larger-margin">
+                  <div class="form__block">
+                    <div class="form__block-label">Arrival and Departure Dates</div>
+                    <div class="form__input-wrap">
+                      <input class="$input input_dropdown input_dropdown-date" type="text" placeholder="DD.MM.YYYY" id="stay-dates" value="19 nov - 23 nov"/><i class="material-icons arrow-down">keyboard_arrow_down</i>
+                    </div>
                   </div>
-                  <div class="form__input-wrap">
-                    <input class="input input_text" type="text" placeholder="Second name"/>
-                  </div>
-                  <div class="form__radio-wrap">
-                    <label class="input input_radio__label">
-                      <input class="input input_radio" type="radio" name="sex" checked="checked"/>
-                      <div class="input_radio__border"></div><span class="input input_radio__span">Male</span>
-                    </label>
-                    <label class="input input_radio__label">
-                      <input class="input input_radio" type="radio" name="sex"/>
-                      <div class="input_radio__border"></div><span class="input input_radio__span">Female</span>
-                    </label>
-                    <label class="input input_radio__label">
-                      <input class="input input_radio" type="radio" name="sex"/>
-                      <div class="input_radio__border"></div><span class="input input_radio__span">Other</span>
-                    </label>
+                  <div class="form__block">
+                    <div class="form__block-label">Guests</div>
+                    <div class="form__input-wrap">
+                      <input class="$input input_dropdown input_dropdown-" type="text" placeholder="Number of guests" id="guest-counter" readonly="readonly"/><i class="material-icons arrow-down">keyboard_arrow_down</i>
+                    </div>
                   </div>
                 </div>
-                <div class="form__block">
-                  <div class="form__block-label">Birth Date</div>
-                  <div class="form__input-wrap">
-                    <input class="input input_text" type="text" placeholder="DD.MM.YYYY"/>
-                  </div>
+                <div class="form_block form__block_larger-margin">
+                  <input class="js-range-slider" type="text" data-min="1500" data-max="25000" data-from="5000" data-to="10000" data-type="double" name="price-slider"/>
                 </div>
-                <div class="form__block">
-                  <div class="form__block-label">Login Details  </div>
-                  <div class="form__input-wrap">
-                    <input class="input input_mail" type="mail" placeholder="Email"/>
-                  </div>
-                  <div class="form__input-wrap"> 
-                    <input class="input input_password" type="password" placeholder="Password"/>
-                  </div>
-                  <div class="form__checkbox-wrap">
-                    <label class="input input_checkbox__label">
-                      <input class="input input_checkbox" type="checkbox"/>
-                      <div class="input_checkbox__border"></div><span class="input input_checkbox__span">Get special offers</span>
-                    </label>
-                  </div>
-                </div>
-                <div class="form__block">
-                  <div class="form__btn-wrap_lg">
-                    <button class="btn btn_filled btn_lg  btn_arrow  btn_enabled" type="button">Go to bill<i class="material-icons material-icons_arrow-forward">arrow_forward</i>
-                    </button>
-                  </div>
-                </div>
-              </form>
-              <div class="form__accounting-wrap"><span class="form__accounting">Already registered?</span><a href="/login.html">
-                  <button class="btn btn_border btn_md  btn_  btn_enabled" type="button">Log in
-                  </button></a></div>
+              </div>
             </div>
+            <div class="page__main"></div>
           </div>
         </div>
       </div>

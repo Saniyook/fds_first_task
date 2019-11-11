@@ -1,15 +1,21 @@
-+form({label: 'We will find numbers according to your wishes', type:'date-pick'})
-  .form__dropdown-wrap.form__dropdown-wrap_row.datepicker-wrap
-    .form__dropdown_md
-      +form__field-label({value: 'Arrival'})
-      .form__input-wrap
-        +input({type: 'dropdown', kind:'date', placeholder: 'DD.MM.YYYY', id:'arrival-date'})
-    .form__dropdown_md
-      +form__field-label({value: 'Departure'})
-      .form__input-wrap
-        +input({type: 'dropdown', kind:'date', placeholder: 'DD.MM.YYYY', id:'departure-date'})
-  +form__field-label({value: 'Arrival'})
-  .form__input-wrap
-    +input({type: 'dropdown', placeholder: 'Number of guests', id:'guest-counter'})
++form({label: 'We will find rooms according to your wishes', type:'date-pick'})
+  
+  .form__block
+    .form__dropdown-wrap.form__dropdown-wrap_row.datepicker-wrap
+      .form__dropdown_md
+        .form__block-label Arrival
+        .form__input-wrap
+          +input({type: 'dropdown', kind:'date', placeholder: 'DD.MM.YYYY'})(id = 'arrival-date')
+      .form__dropdown_md
+        .form__block-label Departure
+        .form__input-wrap
+          +input({type: 'dropdown', kind:'date', placeholder: 'DD.MM.YYYY'})(id = 'departure-date')
+  
+
+  .form__block
+    .form__block-label Arrival
+    .form__input-wrap.guestpicker-wrap
+      +input({type: 'dropdown', placeholder: 'Number of guests'})(id = 'guest-counter', readonly='readonly')
   .form__btn-wrap_lg
-    +btn({type: 'button', kind: 'filled', size: 'lg', style: 'arrow', value: 'Find a room'})  
+    a( href = '/rooms.html' )
+      +btn({type: 'button', kind: 'filled', size: 'lg', style: 'arrow', value: 'Find a room'})  

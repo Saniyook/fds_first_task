@@ -10,8 +10,10 @@ module.exports = {
         'material_icons',
         'fonts.scss',
         'datepicker',
+        'dropdown',
         'main',
     ],
     alwaysImportjs: [
+        'main.js'
     ],
 }

@@ -1,24 +1,40 @@
-@import '__field-label/_field-label.scss';
-
 .form {
   display: flex;
   flex-direction: column;
 
-
   &__label {
-    margin: 10px 0 15px;
-
-    h1 {
-      margin: 0;
-      font-family: QuicksandBold, sans-serif;
-      font-size: 24px;
+    &:not(:last-child) {
+      margin-bottom: 20px;
     }
   }
+
+  &__block {
+
+    &:not(:last-child) {
+      margin-bottom: 20px;
+    }
+
+    &-label {
+      font-family: MontseratBold;
+      font-size: 12px;
+      text-transform: uppercase;
+    }
+
+    &_larger-margin {
+      &:not(:last-child) {
+        margin-bottom: 30px;
+      }
+    }
+  }
+
 
   &__input-wrap {
     position: relative;
     width: 100%;
-    margin: 5px 0;
+    
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
 
     .arrow-down {
       position: absolute;
@@ -33,21 +49,18 @@
     display: flex;
     flex-direction: row;
     width: 100%;
-    margin: 5px 0 3px;
   }
 
   &__checkbox-wrap {
     display: flex;
     flex-direction: column;
     width: 100%;
-    margin: 5px 0;
   }
 
   &__btn-wrap {
 
     &_lg {
       width: 100%;
-      margin-top: 15px;
     }
 
     &_md {
@@ -56,7 +69,7 @@
   }
 
   &__accounting-wrap {
-    margin-top: 30px;
+    margin-top: 10px;
     display: flex;
     align-items: center;
     justify-content: space-between;

@@ -1,0 +1,24 @@
+extends ../pug/layout.pug
+block meta
+  title Главная
+  meta(name='description', content='')
+block content
+  .page__background
+    .container
+      .page__aside
+        .page_form-wrap.page__form-frap_aside
+          .form_block.form__block_larger-margin
+            .form__block
+              .form__block-label Arrival and Departure Dates
+              .form__input-wrap
+                +input({type: 'dropdown', kind:'date', placeholder: 'DD.MM.YYYY'})(id = 'stay-dates', value = '19 nov - 23 nov')
+            
+            .form__block
+              .form__block-label Guests
+              .form__input-wrap
+                +input({type: 'dropdown', placeholder: 'Number of guests'})(id = 'guest-counter', readonly='readonly')
+          
+          .form_block.form__block_larger-margin
+            +range-slider({min: 1500, max:25000, start: 5000, end: 10000, name:'price-slider'})
+      
+      .page__main

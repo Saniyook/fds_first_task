@@ -1,12 +1,18 @@
 +form({type: 'auth', label: "Log in"})
-  .form__input-wrap  
-    +input({type:'mail'})
-  .form__input-wrap  
-    +input({type:'password'})
-  .form__btn-wrap_lg
-    +btn({size:'lg', type: 'button', kind: 'filled', style:'arrow', value: 'Log in'})
-.form__accounting-wrap
-  span.accounting Still haven't account?
-  a(href = '/reg.html')
-    .form__btn-wrap_md
-      +btn({type: 'button', kind: 'border', value: 'Register', size:'md'})      
+  .form__block
+    .form__input-wrap  
+      +input({type:'mail'})
+    .form__input-wrap  
+      +input({type:'password'})
+
+
+  .form__block   
+    .form__btn-wrap_lg
+      +btn({size:'lg', type: 'button', kind: 'filled', style:'arrow', value: 'Log in'})
+
+
+  .form__accounting-wrap
+    span.accounting Still haven't account?
+    a(href = '/reg.html')
+      .form__btn-wrap_md
+        +btn({type: 'button', kind: 'border', value: 'Register', size:'md'})      

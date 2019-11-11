@@ -4,6 +4,7 @@
   flex-wrap: wrap;
   flex-direction: row;
   align-items: center;
+  justify-content: space-between;
 
   &__accounting-wrap {
     display: flex;
@@ -27,18 +28,8 @@
 
   &__nav-acc-wrap {
     display: inline-flex;
-    flex-grow: 0.5;
     flex-direction: row;
     align-items: center;
     justify-content: flex-end;
-  }
-
-  &__logo-wrap {
-    display: inline-flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    flex-grow: 0.5;
-    margin: auto;
   }
 }

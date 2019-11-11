@@ -115,7 +115,7 @@ function writeEntryJs(cb) {
   if (context.config.alwaysImportjs)
     if (context.config.alwaysImportjs.length)
       context.config.alwaysImportjs.forEach(fileName => {
-        msg += `import '${fileName}';\n`
+        msg += `import './${fileName.split('.')[0]}.js';\n`
       })
   allBlocksWithJsFiles.forEach(blockName => {
     if (context.htmlBlocks.indexOf(blockName) == -1) return

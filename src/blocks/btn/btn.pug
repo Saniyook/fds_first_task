@@ -8,6 +8,6 @@ mixin btn(params)
     - cls += `  btn_${style}`
   - enabled = enabled ? 'enabled' : 'disabled' 
   - cls += `  btn_${enabled}`
-    button(class = cls, type=type, onclick = onclick) #{value}
+    button(class = cls, type=type, onclick = onclick)&attributes(attributes) #{value}
       if style =='arrow'
         i.material-icons.material-icons_arrow-forward arrow_forward

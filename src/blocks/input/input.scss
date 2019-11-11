@@ -141,5 +141,10 @@
     z-index: 10;
     text-shadow: 0 0 0 $dark_shade_75;
     cursor: pointer;
+
+    &.active {
+      border-bottom-left-radius: 0;
+      border-bottom-right-radius: 0;
+    }
   }
 }

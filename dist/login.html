@@ -18,7 +18,7 @@
   </head>
   <body>
     <noscript>У вас отключен JavaScript. Это пугает.</noscript>
-    <div class="page__inner">
+    <div class="page__wrap">
       <div class="page__content">
         <div class="page__cell page__cell_header">
           <div class="container">
@@ -29,17 +29,17 @@
               <div class="header__nav-acc-wrap"> 
                 <nav class="main-nav">
                   <ul>
-                    <li class="main-nav__link main-nav__link_x"><a class="_isActive" href="#">Home</a></li>
-                    <li class="main-nav__link main-nav__link_x"><a href="#">About Us</a></li>
-                    <li class="main-nav__link main-nav__link_x"><a href="#">Services</a></li>
-                    <li class="main-nav__link main-nav__link_x main-nav__link_expanded"><a href="#">Careers</a><i class="material-icons arrow_down">keyboard_arrow_down</i>
+                    <li class="main-nav__link main-nav__link_x"><a class="_isActive" href="/">Home</a></li>
+                    <li class="main-nav__link main-nav__link_x"><a href="/about">About Us</a></li>
+                    <li class="main-nav__link main-nav__link_x"><a href="/services">Services</a></li>
+                    <li class="main-nav__link main-nav__link_x main-nav__link_expanded"><a href="#">Careers</a><i class="material-icons keyboard_arrow_down">keyboard_arrow_down</i>
                       <ul class="main-nav__expanded-list">
                         <li class="main-nav__link main-nav__link_y"><a href="#">First</a></li>
                         <li class="main-nav__link main-nav__link_y"><a href="#">Second</a></li>
                       </ul>
                     </li>
-                    <li class="main-nav__link main-nav__link_x"><a href="#">News</a></li>
-                    <li class="main-nav__link main-nav__link_x"><a href="#">Documentation</a></li>
+                    <li class="main-nav__link main-nav__link_x"><a href="/news">News</a></li>
+                    <li class="main-nav__link main-nav__link_x"><a href="/support/doc">Documentation</a></li>
                   </ul>
                 </nav>
                 <div class="header__accounting-wrap"><a href="/login.html">
@@ -60,22 +60,26 @@
                 <div class="form__label">
                   <h1>Log in</h1>
                 </div>
-                <div class="form__input-wrap"> 
-                  <input class="input input_mail" type="mail" placeholder="Email"/>
+                <div class="form__block">
+                  <div class="form__input-wrap"> 
+                    <input class="input input_mail" type="mail" placeholder="Email"/>
+                  </div>
+                  <div class="form__input-wrap"> 
+                    <input class="input input_password" type="password" placeholder="Password"/>
+                  </div>
                 </div>
-                <div class="form__input-wrap"> 
-                  <input class="input input_password" type="password" placeholder="Password"/>
-                </div>
-                <div class="form__btn-wrap_lg">
-                  <button class="btn btn_filled btn_lg  btn_arrow  btn_enabled" type="button">Log in<i class="material-icons material-icons_arrow-forward">arrow_forward</i>
-                  </button>
-                </div>
-              </form>
-              <div class="form__accounting-wrap"><span class="accounting">Still haven't account?</span><a href="/reg.html">
-                  <div class="form__btn-wrap_md">
-                    <button class="btn btn_border btn_md  btn_  btn_enabled" type="button">Register
+                <div class="form__block">  
+                  <div class="form__btn-wrap_lg">
+                    <button class="btn btn_filled btn_lg  btn_arrow  btn_enabled" type="button">Log in<i class="material-icons material-icons_arrow-forward">arrow_forward</i>
                     </button>
-                  </div></a></div>
+                  </div>
+                </div>
+                <div class="form__accounting-wrap"><span class="accounting">Still haven't account?</span><a href="/reg.html">
+                    <div class="form__btn-wrap_md">
+                      <button class="btn btn_border btn_md  btn_  btn_enabled" type="button">Register
+                      </button>
+                    </div></a></div>
+              </form>
             </div>
           </div>
         </div>
@@ -127,7 +131,7 @@
                   <p class="footer-links__text">Receive our latest news and promotions in your inbox!</p>
                 </li>
                 <li class="footer-links__item footer-links__item_subscribe">
-                  <input class="input input_mail" type="mail" placeholder="Your email address" id="subscribe_mail_input"/><i class="material-icons arrow-forward" id="subscribe_mail_button">arrow_forward</i>
+                  <input class="input input_mail" type="mail" placeholder="Your email address"/><i class="material-icons arrow-forward" id="subscribe_mail_button">arrow_forward</i>
                 </li>
               </ul>
             </div>
